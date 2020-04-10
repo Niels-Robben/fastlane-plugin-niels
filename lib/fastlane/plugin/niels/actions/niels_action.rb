@@ -5,7 +5,20 @@ module Fastlane
   module Actions
     class NielsAction < Action
       def self.run(params)
-        UI.message("🤖" * 10)
+        require 'rqrcode'
+
+        qr = RQRCode::QRCode.new('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+        result = ''
+
+      qr.qrcode.modules.each do |row|
+      row.each do |col|
+        result << (col ? 'X' : 'O')
+      end
+
+    result << "\n"
+end
+
+puts result
       end
 
       def self.description
