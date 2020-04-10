@@ -18,11 +18,7 @@ module Fastlane
           standalone: true
         )
 
-        puts svg
-        
-      end
-
-puts result
+        puts(svg)
       end
 
       def self.description
