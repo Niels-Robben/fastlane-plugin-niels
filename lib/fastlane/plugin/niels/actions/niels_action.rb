@@ -10,12 +10,10 @@ module Fastlane
         qrcode = RQRCode::QRCode.new("http://github.com/")
 
         # NOTE: showing with default options specified explicitly
-        svg = qrcode.as_svg(
-          offset: 0,
-          color: '000',
-          shape_rendering: 'crispEdges',
-          module_size: 6,
-          standalone: true
+        svg = qrcode.as_ansi(
+          light: "\033[47m", dark: "\033[40m",
+          fill_character: '  ',
+          quiet_zone_size: 4
         )
 
         puts(svg)
