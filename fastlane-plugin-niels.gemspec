@@ -24,7 +24,6 @@ Gem::Specification.new do |spec|
   # spec.add_dependency 'your-dependency', '~> 1.0.0'
 
   spec.add_development_dependency('pry')
-  spec.add_development_dependency('rqrcode')
   spec.add_development_dependency('bundler')
   spec.add_development_dependency('rspec')
   spec.add_development_dependency('rspec_junit_formatter')
