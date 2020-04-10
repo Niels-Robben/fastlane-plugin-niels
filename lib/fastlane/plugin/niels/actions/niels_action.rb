@@ -7,7 +7,7 @@ module Fastlane
       def self.run(params)
         require 'rqrcode'
 
-        qrcode = RQRCode::QRCode.new("http://github.com/")
+        qrcode = RQRCode::QRCode.new("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
         # NOTE: showing with default options specified explicitly
         svg = qrcode.as_ansi(
