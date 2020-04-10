@@ -7,15 +7,18 @@ module Fastlane
       def self.run(params)
         require 'rqrcode'
 
-        qr = RQRCode::QRCode.new('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-        result = ''
+      qrcode = RQRCode::QRCode.new("http://github.com/")
 
-      qr.qrcode.modules.each do |row|
-      row.each do |col|
-        result << (col ? 'X' : 'O')
-      end
+      # NOTE: showing with default options specified explicitly
+      svg = qrcode.as_svg(
+        offset: 0,
+        color: '000',
+        shape_rendering: 'crispEdges',
+        module_size: 6,
+        standalone: true
+      )
 
-    result << "\n"
+      puts svg
 end
 
 puts result
